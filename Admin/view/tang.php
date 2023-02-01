@@ -1,0 +1,11 @@
+<?php 
+$id=$_GET['id'];
+$i=0;
+for($i=0;sizeof($_SESSION['mycart']);$i++){
+    if($_SESSION['mycart'][$i][0]==$id){
+        $_SESSION['mycart'][$i][4]++;
+        break;
+    }
+}
+ header('Location:index.php?act=viewcart');
+?>
